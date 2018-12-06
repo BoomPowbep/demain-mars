@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "League Gothic";
+  src: url(/build/fonts/league-gothic-italic-regular.ac4f47f6.ttf) format("ttf"), url(/build/fonts/subset-LeagueGothic-Italic.1c34557a.woff2) format("woff2"), url(/build/fonts/subset-LeagueGothic-Italic.1078b802.woff) format("woff");
+}
+
 html,
 body,
 main {
@@ -5,6 +10,7 @@ main {
   height: 100%;
   margin: 0;
   color: #FFFFFF;
+  overflow-x: hidden;
 }
 
 html body {
@@ -31,6 +37,17 @@ html body main h1 {
   left: calc(50% - 100px);
 }
 
+html body main #about_btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  margin: 0;
+  font-size: 35px;
+  z-index: 438975;
+  font-family: "League Gothic", sans-serif;
+}
+
 html body main #stars {
   z-index: -1;
 }
@@ -39,6 +56,46 @@ html body main .slide {
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+html body main .slide#landing #title {
+  position: absolute;
+  width: 552px;
+  height: 552px;
+  top: calc(50% - 326px);
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+html body main .slide#landing #patates .patate.one {
+  position: absolute;
+  width: 1300px;
+  height: auto;
+  top: 500px;
+  left: -750px;
+}
+
+html body main .slide#landing #patates .patate.two {
+  position: absolute;
+  width: 1400px;
+  height: auto;
+  top: 700px;
+  right: -750px;
+}
+
+html body main .slide#landing #patates .patate.three {
+  position: absolute;
+  width: 1500px;
+  height: auto;
+  top: -300px;
+  -moz-transform: scale(1, -1) rotate(20deg);
+  -webkit-transform: scale(1, -1) rotate(20deg);
+  -o-transform: scale(1, -1) rotate(20deg);
+  -ms-transform: scale(1, -1) rotate(20deg);
+  transform: scale(1, -1) rotate(20deg);
 }
 
 html body main .mouse {

@@ -3,6 +3,7 @@ html, body, main {
   height: 100%;
   margin: 0;
   color: $white;
+  overflow-x: hidden;
 }
 
 html {
@@ -26,6 +27,17 @@ html {
         left: calc(50% - 100px);
       }
 
+      #about_btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 0;
+        margin: 0;
+        font-size: 35px;
+        z-index: 438975;
+        font-family: "League Gothic", sans-serif;
+      }
+
       #stars {
         z-index: -1;
       }
@@ -34,6 +46,63 @@ html {
         position: relative;
         width: 100%;
         height: 100%;
+
+        &#landing {
+          #title {
+            position: absolute;
+            width: 552px;
+            height: 552px;
+            top: calc(50% - 326px);
+            margin: auto;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            opacity: 0;
+
+            &:before {
+
+            }
+
+            &:after {
+
+            }
+          }
+
+          #patates {
+
+            .patate {
+
+              &.one {
+                position: absolute;
+                width: 1300px;
+                height: auto;
+                top: 500px;
+                left: -750px;
+              }
+
+              &.two {
+                position: absolute;
+                width: 1400px;
+                height: auto;
+                top: 700px;
+                right: -750px;
+              }
+
+              &.three {
+                position: absolute;
+                width: 1500px;
+                height: auto;
+                top: -300px;
+
+                -moz-transform: scale(1, -1) rotate(20deg);
+                -webkit-transform: scale(1, -1) rotate(20deg);
+                -o-transform: scale(1, -1) rotate(20deg);
+                -ms-transform: scale(1, -1) rotate(20deg);
+                transform: scale(1, -1) rotate(20deg);
+              }
+            }
+          }
+        }
 
         &#first {
 
