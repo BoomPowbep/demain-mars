@@ -1,0 +1,79 @@
+html, body, main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: $white;
+}
+
+html {
+  body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d64d51+0,3b3652+100 */
+    background: #d64d51; /* Old browsers */
+    background: -moz-linear-gradient(left, #d64d51 0%, #3b3652 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #d64d51 0%,#3b3652 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #d64d51 0%,#3b3652 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d64d51', endColorstr='#3b3652',GradientType=1 ); /* IE6-9 */
+
+    main {
+
+      h1 {
+        position: absolute;
+        font-size: 2em;
+        text-align: center;
+        width: 200px;
+        height: 50px;
+        top: calc(50% - 50px);
+        left: calc(50% - 100px);
+      }
+
+      #stars {
+        z-index: -1;
+      }
+
+      .slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &#first {
+
+        }
+
+        &#second {
+
+        }
+      }
+
+      .mouse {
+        position: absolute;
+        margin: 50px auto;
+        width: 100px;
+        bottom: 0;
+        left: calc(50% - 50px);
+
+        .mouse-icon {
+          width: 25px;
+          height: 45px;
+          border: 2px solid white;
+          border-radius: 15px;
+          cursor: default;
+          position: relative;
+          text-align: center;
+          margin: auto;
+
+          .mouse-wheel {
+            height: 6px;
+            margin: 2px auto 0;
+            display: block;
+            width: 3px;
+            background-color: white;
+            border-radius: 50%;
+            -webkit-animation: 1.6s ease infinite wheel-up-down;
+            -moz-animation: 1.6s ease infinite wheel-up-down;
+            animation: 1.6s ease infinite wheel-up-down;
+          }
+        }
+      }
+    }
+  }
+}
