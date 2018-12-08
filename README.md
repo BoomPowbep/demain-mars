@@ -1,12 +1,13 @@
-# sample-project
+# Demain, Mars ?
 
-A sample web project with webpack-encore and http-server
+Workshop Dataviz.
+[...]
 
 ## Installation
 
 First, clone the repository
 ```
-git clone https://github.com/Hugotgot/sample-project.git
+git clone https://github.com/BoomPowbep/demain-mars.git
 ```
 
 Then, install dependencies
@@ -31,4 +32,6 @@ npm run encore.prod
 npm run serve
 ```
 
-Now, your project is accessible at http://127.0.0.1:8088 !
+## Credits
+* Webpack config : [sample-project by Hugotgot](https://github.com/Hugotgot/sample-project)
+* Scroll: [fullPage.js by alvarotrigo](https://github.com/alvarotrigo/fullpage.js)

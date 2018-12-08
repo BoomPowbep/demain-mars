@@ -1,0 +1,22 @@
+#donut {
+  width: 500px;
+  height: 500px;
+
+  cursor: default;
+
+  &.c3-defocused {
+    &.c3-target {
+      opacity: 1 !important;
+    }
+  }
+
+  text {
+    fill: #ccc;
+  }
+
+  .c3-chart-arcs-title {
+    fill: white;
+    font-size: 3em;
+  }
+
+}

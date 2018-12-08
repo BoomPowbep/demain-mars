@@ -9,7 +9,7 @@ html, body, main {
 html {
   body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d64d51+0,3b3652+100 */
-    background: #d64d51; /* Old browsers */
+    background: #3b3652; /* Old browsers */
     background: -moz-linear-gradient(left, #d64d51 0%, #3b3652 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #d64d51 0%,#3b3652 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #d64d51 0%,#3b3652 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -29,69 +29,100 @@ html {
 
       #about_btn {
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 30px;
+        right: 30px;
         padding: 0;
         margin: 0;
-        font-size: 35px;
-        z-index: 438975;
-        font-family: "League Gothic", sans-serif;
+        font-size: 25px;
+        z-index: 2;
+        font-family: Ruda, sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        border-bottom: 2px solid $white;
+      }
+
+      #about_modal {
+        display: none;
+        position: absolute;
+        background-color: $white;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        color: $black;
+        opacity: 0;
+
+        #about_close {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+        }
       }
 
       #stars {
         z-index: -1;
       }
 
-      .slide {
-        position: relative;
-        width: 100%;
-        height: 100%;
+      .section {
+        //position: relative;
+        //width: 100%;
+        //height: 100%;
 
         &#landing {
-          #title {
-            position: absolute;
+
+          #title_container {
+            position: relative;
             width: 552px;
             height: 552px;
-            top: calc(50% - 326px);
-            margin: auto;
-            left: 0;
-            right: 0;
+            top: calc(50vh - 326px);
+            margin: 0;
+            left: calc(50vw - 261px);
             z-index: 2;
-            opacity: 0;
+            opacity: 0.5;
+            text-transform: uppercase;
+            font-family: "League Gothic", sans-serif;
 
             &:before {
-
+              position: absolute;
+              content: 'Demain,';
+              font-size: 200px;
+              left: -400px;
+              top: calc(50% - 100px);
             }
 
             &:after {
-
+              position: absolute;
+              content: 'Mars ?';
+              font-size: 200px;
+              right: -350px;
+              top: calc(50% - 100px);
             }
           }
 
           #patates {
 
             .patate {
+              backface-visibility: hidden;
+              position: absolute;
+              height: auto;
+              opacity: 0.5;
 
               &.one {
-                position: absolute;
                 width: 1300px;
-                height: auto;
                 top: 500px;
                 left: -750px;
               }
 
               &.two {
-                position: absolute;
                 width: 1400px;
-                height: auto;
                 top: 700px;
                 right: -750px;
               }
 
               &.three {
-                position: absolute;
                 width: 1500px;
-                height: auto;
                 top: -300px;
 
                 -moz-transform: scale(1, -1) rotate(20deg);
@@ -99,6 +130,50 @@ html {
                 -o-transform: scale(1, -1) rotate(20deg);
                 -ms-transform: scale(1, -1) rotate(20deg);
                 transform: scale(1, -1) rotate(20deg);
+              }
+            }
+          }
+
+          #cometes {
+
+            .comete {
+              backface-visibility: hidden;
+              position: absolute;
+              height: auto;
+
+              &.one {
+                width: 400px;
+                top: -100px;
+                left: -400px;
+                transform: rotate(4deg);
+              }
+
+              &.two {
+                width: 200px;
+                top: -80px;
+                left: -500px;
+                transform: rotate(4deg);
+              }
+
+              &.three {
+                width: 180px;
+                top: -430px;
+                left: 920px;
+                transform: rotate(95deg);
+              }
+
+              &.four {
+                width: 300px;
+                top: -300px;
+                left: 300px;
+                transform: rotate(4deg);
+              }
+
+              &.five {
+                width: 250px;
+                top: -230px;
+                left: 800px;
+                transform: rotate(4deg);
               }
             }
           }
@@ -135,7 +210,7 @@ html {
             margin: 2px auto 0;
             display: block;
             width: 3px;
-            background-color: white;
+            background-color: $white;
             border-radius: 50%;
             -webkit-animation: 1.6s ease infinite wheel-up-down;
             -moz-animation: 1.6s ease infinite wheel-up-down;

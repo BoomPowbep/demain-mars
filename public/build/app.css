@@ -1,6 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900&subset=latin-ext);
 @font-face {
   font-family: "League Gothic";
-  src: url(/build/fonts/league-gothic-italic-regular.ac4f47f6.ttf) format("ttf"), url(/build/fonts/subset-LeagueGothic-Italic.1c34557a.woff2) format("woff2"), url(/build/fonts/subset-LeagueGothic-Italic.1078b802.woff) format("woff");
+  src: url(/build/fonts/league-gothic-italic-regular.ac4f47f6.ttf);
 }
 
 html,
@@ -15,7 +16,7 @@ main {
 
 html body {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d64d51+0,3b3652+100 */
-  background: #d64d51;
+  background: #3b3652;
   /* Old browsers */
   background: -moz-linear-gradient(left, #d64d51 0%, #3b3652 100%);
   /* FF3.6-15 */
@@ -39,63 +40,139 @@ html body main h1 {
 
 html body main #about_btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 30px;
+  right: 30px;
   padding: 0;
   margin: 0;
-  font-size: 35px;
-  z-index: 438975;
-  font-family: "League Gothic", sans-serif;
+  font-size: 25px;
+  z-index: 2;
+  font-family: Ruda, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  border-bottom: 2px solid #FFFFFF;
+}
+
+html body main #about_modal {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  color: #000000;
+  opacity: 0;
+}
+
+html body main #about_modal #about_close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
 
 html body main #stars {
   z-index: -1;
 }
 
-html body main .slide {
+html body main .section#landing #title_container {
   position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-html body main .slide#landing #title {
-  position: absolute;
   width: 552px;
   height: 552px;
-  top: calc(50% - 326px);
-  margin: auto;
-  left: 0;
-  right: 0;
+  top: calc(50vh - 326px);
+  margin: 0;
+  left: calc(50vw - 261px);
   z-index: 2;
-  opacity: 0;
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-family: "League Gothic", sans-serif;
 }
 
-html body main .slide#landing #patates .patate.one {
+html body main .section#landing #title_container:before {
   position: absolute;
-  width: 1300px;
+  content: 'Demain,';
+  font-size: 200px;
+  left: -400px;
+  top: calc(50% - 100px);
+}
+
+html body main .section#landing #title_container:after {
+  position: absolute;
+  content: 'Mars ?';
+  font-size: 200px;
+  right: -350px;
+  top: calc(50% - 100px);
+}
+
+html body main .section#landing #patates .patate {
+  backface-visibility: hidden;
+  position: absolute;
   height: auto;
+  opacity: 0.5;
+}
+
+html body main .section#landing #patates .patate.one {
+  width: 1300px;
   top: 500px;
   left: -750px;
 }
 
-html body main .slide#landing #patates .patate.two {
-  position: absolute;
+html body main .section#landing #patates .patate.two {
   width: 1400px;
-  height: auto;
   top: 700px;
   right: -750px;
 }
 
-html body main .slide#landing #patates .patate.three {
-  position: absolute;
+html body main .section#landing #patates .patate.three {
   width: 1500px;
-  height: auto;
   top: -300px;
   -moz-transform: scale(1, -1) rotate(20deg);
   -webkit-transform: scale(1, -1) rotate(20deg);
   -o-transform: scale(1, -1) rotate(20deg);
   -ms-transform: scale(1, -1) rotate(20deg);
   transform: scale(1, -1) rotate(20deg);
+}
+
+html body main .section#landing #cometes .comete {
+  backface-visibility: hidden;
+  position: absolute;
+  height: auto;
+}
+
+html body main .section#landing #cometes .comete.one {
+  width: 400px;
+  top: -100px;
+  left: -400px;
+  transform: rotate(4deg);
+}
+
+html body main .section#landing #cometes .comete.two {
+  width: 200px;
+  top: -80px;
+  left: -500px;
+  transform: rotate(4deg);
+}
+
+html body main .section#landing #cometes .comete.three {
+  width: 180px;
+  top: -430px;
+  left: 920px;
+  transform: rotate(95deg);
+}
+
+html body main .section#landing #cometes .comete.four {
+  width: 300px;
+  top: -300px;
+  left: 300px;
+  transform: rotate(4deg);
+}
+
+html body main .section#landing #cometes .comete.five {
+  width: 250px;
+  top: -230px;
+  left: 800px;
+  transform: rotate(4deg);
 }
 
 html body main .mouse {
@@ -122,7 +199,7 @@ html body main .mouse .mouse-icon .mouse-wheel {
   margin: 2px auto 0;
   display: block;
   width: 3px;
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: 50%;
   -webkit-animation: 1.6s ease infinite wheel-up-down;
   -moz-animation: 1.6s ease infinite wheel-up-down;
@@ -180,3 +257,22 @@ html body main .mouse .mouse-icon .mouse-wheel {
 }
 
 /***************************************/
+
+#donut {
+  width: 500px;
+  height: 500px;
+  cursor: default;
+}
+
+#donut.c3-defocused.c3-target {
+  opacity: 1 !important;
+}
+
+#donut text {
+  fill: #ccc;
+}
+
+#donut .c3-chart-arcs-title {
+  fill: white;
+  font-size: 3em;
+}

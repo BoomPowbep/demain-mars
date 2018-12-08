@@ -7,39 +7,54 @@
     <link rel="stylesheet" href="build/app.css">
 </head>
 <body>
-<main>
 
-    <div id="stars" style="position: fixed;width: 100%;height: 100%;"></div>
+<div id="stars" style="position: fixed;width: 100%;height: 100%;"></div>
+
+<main>
 
     <p id="about_btn">À propos</p>
 
-    <div class="slide" id="landing">
+    <div id="about_modal">
+        <img src="images/about/petitecroix.svg" id="about_close"/>
+    </div>
 
-        <img src="images/mars.svg" id="title" />
+    <div id="fullpage">
 
-        <div id="patates">
-            <img src="images/patate.png" class="patate one">
-            <img src="images/patate.png" class="patate two">
-            <img src="images/patate.png" class="patate three">
-        </div>
+        <div class="section" data-anchor="1" id="landing">
+            <div id="title_container">
+                <img src="images/mars.svg" id="title"/>
+            </div>
 
-        <div class="mouse">
-            <div class="mouse-icon">
-                <span class="mouse-wheel"></span>
+            <div id="patates">
+                <img src="images/patate.svg" class="patate one">
+                <img src="images/patate.svg" class="patate two">
+                <img src="images/patate.svg" class="patate three">
+            </div>
+
+            <div id="cometes">
+                <img src="images/comet.svg" class="comete one">
+                <img src="images/comet.svg" class="comete two">
+                <img src="images/comet.svg" class="comete three">
+                <img src="images/comet.svg" class="comete four">
+                <img src="images/comet.svg" class="comete five">
+            </div>
+
+            <div class="mouse">
+                <div class="mouse-icon">
+                    <span class="mouse-wheel"></span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="slide" id="first">
-        coucou
-    </div>
+        <div class="section" data-anchor="2">Some section</div>
 
-    <div class="slide" id="second">
-        coucou
+        <div class="section" data-anchor="3">Some section</div>
+
+        <div class="section" data-anchor="4">Some section</div>
+
     </div>
 
 </main>
-
 <script src="build/runtime.js"></script>
 <script src="build/app.js"></script>
 </body>

@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Ruda:400,700,900&subset=latin-ext');
+
 @font-face {
   font-family: "League Gothic";
-  src: url("league/league-gothic-italic-regular.ttf") format("ttf"),
-  url("league/subset-LeagueGothic-Italic.woff2") format("woff2"),
-  url("league/subset-LeagueGothic-Italic.woff") format("woff");
+  src: url('./league/league-gothic-italic-regular.ttf');
 }

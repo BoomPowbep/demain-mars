@@ -1,5 +1,3 @@
-// import '';
-
 import App from './App';
 
 window.addEventListener('DOMContentLoaded', () => {

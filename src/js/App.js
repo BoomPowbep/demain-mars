@@ -1,23 +1,44 @@
-import Stars from './Stars';
+/**
+ * npm run encore.watch
+ */
 
-import {TweenMax} from "gsap/TweenMax";
+import Stars from './Stars';
+import Animations from './Animations';
+import ScrollHandler from './ScrollHandler';
+import Datas from './Datas';
 
 class App {
 
     constructor() {
         console.log('🚀 Demain, Mars ? 🌟 Workshop Dataviz 📊');
+        this.scrollHandler = new ScrollHandler();
     }
 
     init() {
         Stars.init();
-        this._initAnimations();
+        this._registerTriggers();
+        Animations.playIntro();
+        // Datas.draw();
     }
 
-    _initAnimations() {
-        TweenMax.to(".patate.one", 2, {y:"-=100px", ease:Power1.easeOut});
-        TweenMax.to(".patate.two", 2.5, {y:"-=100px", ease:Power1.easeOut});
-        TweenMax.to(".patate.three", 3, {y:"-=100px", ease:Power1.easeOut});
-        TweenMax.to("#title", 1.5, {opacity:"1", ease:Power1.easeOut});
+    _registerTriggers() {
+
+        /** Support pour différents navigateurs **/
+        // window.addEventListener('mousewheel', (e)=> {
+        //     this.scrollHandler.scroll(e);
+        // });
+        // window.addEventListener('DOMMouseScroll', (e)=> {
+        //     this.scrollHandler.scroll(e);
+        // });
+
+        /** Modal about **/
+        document.querySelector('#about_btn').addEventListener('mousedown', () => {
+            Animations.openAboutModal();
+        });
+        document.querySelector('#about_close').addEventListener('mousedown',() => {
+            Animations.closeAboutModal();
+        });
+        /** *********** **/
     }
 }
 

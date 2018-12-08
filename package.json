@@ -18,8 +18,10 @@
   "dependencies": {
     "c3": "^0.6.10",
     "d3": "^5.7.0",
+    "fullpage.js": "^3.0.4",
     "gsap": "^2.0.2",
     "http-server": "^0.11.1",
+    "lethargy": "^1.0.4",
     "particles.js": "^2.0.0"
   }
 }
