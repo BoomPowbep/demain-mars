@@ -52,6 +52,15 @@ class App {
         document.querySelector('#jumper').addEventListener('mousedown', () => {
             Animations.jump();
         });
+
+        /** Infobox **/
+        document.querySelector('.info_icon').addEventListener('mousedown', () => {
+            document.querySelector('.infoBox').style.display = 'block';
+        });
+        document.querySelector('.infoBox').addEventListener('mousedown', () => {
+            document.querySelector('.infoBox').style.display = 'none';
+        });
+        /** *********** **/
     }
 
     _initPositions() {

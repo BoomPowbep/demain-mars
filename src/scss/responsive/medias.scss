@@ -1,5 +1,13 @@
 @media only screen and (max-width: 1450px) {
 
+  .headline {
+    &.medium {
+      &.league {
+        font-size: 38px!important;
+      }
+    }
+  }
+
   #title_container {
     width: 400px !important;
     height: 400px !important;
@@ -77,14 +85,14 @@
       height: 200px !important;
 
       img {
-        top: 75px !important;
-        left: 75px !important;
-        width: 66px !important;
+        top: 59px !important;
+        left: 59px !important;
+        width: 100px !important;
       }
 
       .planet_title {
-        top: 5px !important;
-        left: 145px !important;
+        top: -25px !important;
+        left: 72px !important;
       }
     }
   }

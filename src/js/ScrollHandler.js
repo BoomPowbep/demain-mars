@@ -53,7 +53,7 @@ class ScrollHandler {
                     case 'agen':
                         if (!this.firstAgen) {
                             this.firstAgen = true;
-                            Datas.drawAgencies();
+                            Datas.drawSuccess();
                         }
                         break;
                 }

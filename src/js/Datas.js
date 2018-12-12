@@ -180,8 +180,7 @@ const Datas = {
                 }
             ];
             barChart.xAxisLabel('Durée d\'une journée (h)');
-        }
-        else {
+        } else {
             dataset = [
                 {
                     value: 365,
@@ -205,47 +204,9 @@ const Datas = {
 
     },
 
-    drawAgencies: () => {
+    drawSuccess: () => {
 
-        // let dataset = [
-        //     {
-        //         quantity: 26,
-        //         name: 'NASA - USA',
-        //         id: 1
-        //     },
-        //     {
-        //         quantity: 22,
-        //         name: 'URRS / Russie',
-        //         id: 2
-        //     },
-        //     {
-        //         quantity: 4,
-        //         name: 'ESA - Europe',
-        //         id: 3
-        //     },
-        //     {
-        //         quantity: 1,
-        //         name: 'CNSAPR - Chine',
-        //         id: 4
-        //     },
-        //     {
-        //         quantity: 1,
-        //         name: 'ISRO - Inde',
-        //         id: 5
-        //     },
-        //     {
-        //         quantity: 1,
-        //         name: 'ISAS - Japon',
-        //         id: 6
-        //     },
-        //     {
-        //         quantity: 1,
-        //         name: 'ESA & Russie',
-        //         id: 7
-        //     }
-        // ];
-
-        let dataset = [
+        let dataset1 = [
             {
                 quantity: 25,
                 name: 'Succès',
@@ -266,7 +227,7 @@ const Datas = {
         let
             // legendChart = Datas.getLegendChart(dataset),
             donutChart = donut(),
-            donutContainer = d3Selection.select('#agencies'),
+            donutContainer = d3Selection.select('#success'),
             containerWidth = donutContainer.node() ? donutContainer.node().getBoundingClientRect().width : false;
 
         if (containerWidth) {
@@ -285,10 +246,51 @@ const Datas = {
                     // legendChart.clearHighlight();
                 })
                 .on('customClick', function () {
-                    console.log(donutChart.highlightSliceById());
+                    // console.log(donutChart.highlightSliceById());
                 });
 
-            donutContainer.datum(dataset).call(donutChart);
+            donutContainer.datum(dataset1).call(donutChart);
+
+        }
+
+        let dataset2 = [
+            {
+                quantity: 7,
+                name: 'Succès',
+                id: 1
+            },
+            {
+                quantity: 9,
+                name: 'Echec',
+                id: 2
+            },
+        ];
+
+
+        donutChart = donut();
+        donutContainer = d3Selection.select('#landings');
+        containerWidth = donutContainer.node() ? donutContainer.node().getBoundingClientRect().width : false;
+
+        if (containerWidth) {
+
+            donutChart
+                .isAnimated(true)
+                .highlightSliceById(2)
+                .width(containerWidth)
+                .height(containerWidth)
+                .externalRadius(containerWidth / 2.5)
+                .internalRadius(containerWidth / 5)
+                .on('customMouseOver', function (data) {
+                    // legendChart.highlight(data.data.id);
+                })
+                .on('customMouseOut', function () {
+                    // legendChart.clearHighlight();
+                })
+                .on('customClick', function () {
+                    // console.log(donutChart.highlightSliceById());
+                });
+
+            donutContainer.datum(dataset2).call(donutChart);
 
         }
     },

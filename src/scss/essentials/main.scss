@@ -90,6 +90,7 @@ html {
 
               &#micka {
                 margin-right: 70px;
+
                 &:after {
                   content: 'Mickaël Debalme';
                 }
@@ -97,6 +98,7 @@ html {
 
               &#nitya {
                 margin-left: 70px;
+
                 &:after {
                   content: 'Nitya Tchangodei';
                 }
@@ -410,53 +412,10 @@ html {
             font-style: italic;
 
             font-size: 150px;
-            top: calc(50vh - 140px);
+            top: calc(50vh - 75px);
             width: 100%;
             text-align: center;
             z-index: 3;
-          }
-
-          #choix_mission {
-            position: relative;
-            top: 40px;
-            font-size: 40px;
-            text-transform: uppercase;
-            font-family: 'League Gothic', sans-serif;
-            font-weight: normal;
-            font-style: italic;
-
-            width: 300px;
-            left: calc(50vw - 150px);
-            z-index: 3;
-            text-align: center;
-
-            &:before {
-              content: url('../assets/images/SpaceX-Logo.svg');
-              //content: url('../../public/build/images/SpaceX-Logo.svg');
-              height: 40px;
-              width: auto;
-              border: 2px solid white;
-              position: absolute;
-              left: -400px;
-              top: -10px;
-              padding: 10px;
-
-              svg {
-                fill: #FFFFFF !important;
-              }
-            }
-
-            &:after {
-              content: url('../assets/images/marsone.svg');
-              //content: url('../../public/build/images/marsone.svg');
-              height: 40px;
-              width: 200px;
-              border: 2px solid white;
-              position: absolute;
-              right: -300px;
-              top: -10px;
-              padding: 10px;
-            }
           }
         }
       }
