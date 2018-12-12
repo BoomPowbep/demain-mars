@@ -1,57 +1,321 @@
+/**
+ * Inversement de l'ordre
+ * tempDataset[0] = dataset[1];
+ * dataset[1] = dataset[0];
+ * dataset[0] = tempDataset[0];
+ */
+
 import * as d3 from 'd3';
 import * as c3 from 'c3';
 
+import BarChart from 'britecharts/dist/umd/bar.min';
+import donut from 'britecharts/dist/umd/donut.min';
+
+const colors = require('britecharts/src/charts/helpers/color');
+const miniTooltip = require('britecharts/src/charts/mini-tooltip');
+const legend = require('britecharts/src/charts/legend');
+const d3Selection = require('d3-selection');
+
+let legendChart;
+let redrawCharts;
+
+import 'britecharts/dist/css/britecharts.min.css';
+
 const Datas = {
 
-    draw: () => {
-        let percentage = 0.79;
+    drawDiameter: () => {
 
-        let chart = c3.generate({
-            bindto: '#donut',
-            data: {
-                columns: [
-                    ['show', percentage],
-                    ['dontshow', 1 - percentage],
-                ],
-                type: 'donut',
-                order: null
+        let container = d3Selection.select('#diameter'),
+            tooltip = miniTooltip(),
+            tooltipContainer,
+            containerWidth = container.node() ? container.node().getBoundingClientRect().width : false,
+            containerHeight = container.node() ? container.node().getBoundingClientRect().height : false,
+            barChart = new BarChart(),
+            dataset;
+
+        if (container.node()) {
+            barChart
+                .margin({
+                    left: 120,
+                    right: 20,
+                    top: 20,
+                    bottom: 5
+                })
+                .percentageAxisToMaxRatio(1.3)
+                .isHorizontal(true)
+                .isAnimated(true)
+                .on('customMouseOver', tooltip.show)
+                .on('customMouseMove', tooltip.update)
+                .on('customMouseOut', tooltip.hide)
+                .colorSchema(['#EA3461', '#6E96D4'])
+                .labelsSize(40)
+                .xAxisLabel('Diamètre (km)')
+                .width(containerWidth)
+                .height(containerHeight);
+        }
+
+        dataset = [
+            {
+                value: 12742,
+                name: 'Terre'
             },
-            color: {
-                pattern: ['#13BDD1', '#FFF']
-            },
-            legend: {
-                show: false
-            },
-            donut: {
-                label: {
-                    show: false
-                },
-                title: Math.round(percentage * 100),
-                width: 15,
-                expand: false
-            },
-            tooltip: {
-                show: false
+            {
+                value: 6779,
+                name: 'Mars'
             }
-        });
+        ];
 
-        // baseline text properly
-        d3.select(".c3-chart-arcs-title")
-            .attr("dy", "0.3em");
+        container.datum(dataset).call(barChart);
 
-        // add percentage symbol
-        d3.select(".c3-chart-arcs")
-            .append("text")
-            .text("%")
-            .attr("dy", "-0.5em")
-            .attr("dx", "2em");
+        tooltip
+            .numberFormat();
 
-        // black background for center text
-        d3.select(".c3-chart")
-            .insert("circle", ":first-child")
-            .attr("cx", chart.internal.width / 2)
-            .attr("cy", chart.internal.height / 2 - chart.internal.margin.top)
-            .attr("r", chart.internal.innerRadius);
+        tooltipContainer = d3Selection.select('#diameter .metadata-group');
+        tooltipContainer.datum([]).call(tooltip);
+    },
+
+    drawGravity: (planet) => {
+        document.querySelector('#gravity').innerHTML = "";
+        let container = d3Selection.select('.graph.bar#gravity'),
+            tooltip = miniTooltip(),
+            tooltipContainer,
+            containerWidth = container.node() ? container.node().getBoundingClientRect().width : false,
+            containerHeight = container.node() ? container.node().getBoundingClientRect().height : false,
+            barChart = new BarChart(),
+            dataset, colors;
+
+
+        if (planet === 'terre') {
+            dataset = [
+                {
+                    value: 1,
+                    name: 'Normal:1G'
+                },
+                {
+                    value: 1,
+                    name: 'Terre'
+                }
+            ];
+
+            colors = ['#6E96D4', '#00b33c'];
+        } else {
+            dataset = [
+                {
+                    value: 1,
+                    name: 'Normal.1G'
+                },
+                {
+                    value: 0.379,
+                    name: 'Mars'
+                }
+            ];
+
+            colors = ['#EA3461', '#00b33c'];
+        }
+
+
+        if (container.node()) {
+            barChart
+                .margin({
+                    left: 120,
+                    right: 20,
+                    top: 20,
+                    bottom: 5
+                })
+                .percentageAxisToMaxRatio(1.3)
+                .isHorizontal(true)
+                .isAnimated(true)
+                .on('customMouseOver', tooltip.show)
+                .on('customMouseMove', tooltip.update)
+                .on('customMouseOut', tooltip.hide)
+                .colorSchema(colors)
+                .labelsSize(40)
+                .xAxisLabel('Gravité (G)')
+                .width(containerWidth)
+                .height(containerHeight);
+        }
+
+        container.datum(dataset).call(barChart);
+
+        tooltip
+            .numberFormat();
+
+        tooltipContainer = d3Selection.select('#gravity .metadata-group');
+        tooltipContainer.datum([]).call(tooltip);
+    },
+
+    drawTime: (what) => {
+        document.querySelector('#day_year').innerHTML = "";
+        let container = d3Selection.select('#day_year'),
+            tooltip = miniTooltip(),
+            tooltipContainer,
+            containerWidth = container.node() ? container.node().getBoundingClientRect().width : false,
+            containerHeight = container.node() ? container.node().getBoundingClientRect().height : false,
+            barChart = new BarChart(),
+            dataset;
+
+        if (container.node()) {
+            barChart
+                .margin({
+                    left: 120,
+                    right: 20,
+                    top: 20,
+                    bottom: 5
+                })
+                .percentageAxisToMaxRatio(1.3)
+                .isAnimated(true)
+                .on('customMouseOver', tooltip.show)
+                .on('customMouseMove', tooltip.update)
+                .on('customMouseOut', tooltip.hide)
+                .colorSchema(['#EA3461', '#6E96D4'])
+                .labelsSize(40)
+                .width(containerWidth)
+                .height(containerHeight);
+        }
+
+
+        if (what === 'day') {
+            dataset = [
+                {
+                    value: 24,
+                    name: 'Terre'
+                },
+                {
+                    value: 24.62,
+                    name: 'Mars'
+                }
+            ];
+            barChart.xAxisLabel('Durée d\'une journée (h)');
+        }
+        else {
+            dataset = [
+                {
+                    value: 365,
+                    name: 'Terre'
+                },
+                {
+                    value: 668,
+                    name: 'Mars'
+                }
+            ];
+            barChart.xAxisLabel('Durée d\'une année (jours terrestres)');
+        }
+
+        container.datum(dataset).call(barChart);
+
+        tooltip
+            .numberFormat();
+
+        tooltipContainer = d3Selection.select('#day_year .metadata-group');
+        tooltipContainer.datum([]).call(tooltip);
+
+    },
+
+    drawAgencies: () => {
+
+        // let dataset = [
+        //     {
+        //         quantity: 26,
+        //         name: 'NASA - USA',
+        //         id: 1
+        //     },
+        //     {
+        //         quantity: 22,
+        //         name: 'URRS / Russie',
+        //         id: 2
+        //     },
+        //     {
+        //         quantity: 4,
+        //         name: 'ESA - Europe',
+        //         id: 3
+        //     },
+        //     {
+        //         quantity: 1,
+        //         name: 'CNSAPR - Chine',
+        //         id: 4
+        //     },
+        //     {
+        //         quantity: 1,
+        //         name: 'ISRO - Inde',
+        //         id: 5
+        //     },
+        //     {
+        //         quantity: 1,
+        //         name: 'ISAS - Japon',
+        //         id: 6
+        //     },
+        //     {
+        //         quantity: 1,
+        //         name: 'ESA & Russie',
+        //         id: 7
+        //     }
+        // ];
+
+        let dataset = [
+            {
+                quantity: 25,
+                name: 'Succès',
+                id: 1
+            },
+            {
+                quantity: 32,
+                name: 'Echec',
+                id: 2
+            },
+            {
+                quantity: 10,
+                name: 'Echec de lancement',
+                id: 3
+            }
+        ];
+
+        let
+            // legendChart = Datas.getLegendChart(dataset),
+            donutChart = donut(),
+            donutContainer = d3Selection.select('#agencies'),
+            containerWidth = donutContainer.node() ? donutContainer.node().getBoundingClientRect().width : false;
+
+        if (containerWidth) {
+
+            donutChart
+                .isAnimated(true)
+                .highlightSliceById(2)
+                .width(containerWidth)
+                .height(containerWidth)
+                .externalRadius(containerWidth / 2.5)
+                .internalRadius(containerWidth / 5)
+                .on('customMouseOver', function (data) {
+                    // legendChart.highlight(data.data.id);
+                })
+                .on('customMouseOut', function () {
+                    // legendChart.clearHighlight();
+                })
+                .on('customClick', function () {
+                    console.log(donutChart.highlightSliceById());
+                });
+
+            donutContainer.datum(dataset).call(donutChart);
+
+        }
+    },
+
+    getLegendChart: (dataset) => {
+        let legendChart = legend(),
+            legendContainer = d3Selection.select('.js-legend-chart-container'),
+            containerWidth = legendContainer.node() ? legendContainer.node().getBoundingClientRect().width : false;
+
+        if (containerWidth) {
+            d3Selection.select('.js-legend-chart-container .britechart-legend').remove();
+
+            legendChart
+                .width(containerWidth * 0.8)
+                .height(200)
+                .numberFormat('s');
+
+            legendContainer.datum(dataset).call(legendChart);
+
+            return legendChart;
+        }
     }
 };
 

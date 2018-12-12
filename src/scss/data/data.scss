@@ -1,22 +1,186 @@
-#donut {
-  width: 500px;
-  height: 500px;
+/* Différences Terre / Mars */
+.contour_terre {
+  border: 3px dashed white;
+  border-radius: 50%;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  left: 0;
+}
 
-  cursor: default;
+#planetes_confrontation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  top: 70px;
+  position: relative;
 
-  &.c3-defocused {
-    &.c3-target {
-      opacity: 1 !important;
+  .terre, .mars {
+
+    .planet_title {
+      font-size: 50px;
+      font-family: "League Gothic", sans-serif;
+      padding: 0;
+      margin: 0;
+      width: 80px;
     }
   }
 
-  text {
-    fill: #ccc;
+  .terre {
+    width: 300px;
+    height: 300px;
+    margin-right: 80px;
+
+    .planet_title {
+      position: relative;
+      top: -175px;
+      left: 110px;
+    }
   }
 
-  .c3-chart-arcs-title {
-    fill: white;
-    font-size: 3em;
+  .mars {
+    width: 300px;
+    height: 300px;
+    margin-left: 80px;
+
+    img {
+      position: relative;
+      top: 75px;
+      left: 75px;
+      width: 150px;
+      height: auto;
+    }
+
+    .planet_title {
+      position: relative;
+      top: -31px;
+      left: 115px;
+    }
+  }
+}
+
+/* Orbites */
+.space {
+
+  width: 500px;
+  height: 500px;
+  position: relative;
+
+  .orbite_mars {
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    border: 1px solid white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
   }
 
+  .orbite_terre {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 125px;
+    left: 125px;
+    border: 1px solid white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .sun {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+  }
+
+  .terre {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: 87.5px;
+    left: 212.5px;
+  }
+
+  .mars {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 4px;
+    left: 225px;
+  }
+}
+
+/* Graphs */
+.graph {
+
+  .britechart {
+    overflow:visible!important;
+  }
+
+  svg {
+    text {
+      fill: #ffffff;
+      font-size: 33px !important;
+      font-family: "League Gothic", sans-serif;
+
+      &.x-axis-label-text {
+        transform: translateY(35px);
+      }
+
+      &.mini-tooltip-name {
+        transform: translateY(-10px);
+      }
+
+      &.mini-tooltip-value {
+        transform: translateY(3px);
+      }
+    }
+
+    g {
+      &.tick {
+        text {
+          transform: translateX(-13px);
+        }
+      }
+    }
+  }
+
+  &.bar {
+    position: relative;
+  }
+
+  &.donut {
+    position: relative;
+  }
+
+  &#diameter {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  &#gravity {
+    width: 800px;
+    height: 175px;
+    position: relative;
+    left: calc(50% - 400px);
+    top:30px;
+  }
+
+  &#day_year {
+    width: 600px;
+    height: 300px;
+  }
+
+  &#agencies {
+    width: 500px;
+    height: 500px;
+    //margin: auto 0;
+  }
 }

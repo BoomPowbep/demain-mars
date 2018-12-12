@@ -1,0 +1,24 @@
+/* Gravity */
+#jumper {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+
+  .landscape {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .mini_cosmonaut {
+    width: 100px;
+    height: 100px;
+    transform: rotate(19deg);
+    position: absolute;
+    bottom: 80px;
+    left: calc(50% - 50px);
+    z-index: 4;
+  }
+}

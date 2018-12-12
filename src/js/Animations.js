@@ -1,9 +1,20 @@
-import {TweenMax, TimelineLite, CSSRulePlugin} from "gsap/all";
+import {TweenLite, TweenMax, TimelineLite} from "gsap";
+import CSSRulePlugin from "gsap/CSSRulePlugin";
+import Datas from './Datas';
 
 const Animations = {
 
     playIntro: () => {
-        let sequence = new TimelineLite();
+        let sequence = new TimelineLite({
+            onComplete: () => {
+                let els = document.querySelectorAll('#fullpage .section:not(:first-child)');
+                els.forEach((cur) => {
+                    cur.style.opacity = 1;
+                });
+
+                TweenLite.to('.mouse', 0.5, {opacity: "1"});
+            }
+        });
 
         /** Mars */
         sequence.to("#title_container", 1.5, {opacity: "1", ease: Power1.easeOut, force3D: true}, 0);
@@ -31,14 +42,106 @@ const Animations = {
         // }, "titre");
     },
 
+    revealIntroSpeech: () => {
+        let sequence = new TimelineLite();
+        sequence.to('#appear1', 0.7, {opacity:1});
+        sequence.add('next1', 4);
+        sequence.to('#appear2', 0.7, {opacity:1}, 'next1');
+        sequence.add('next2', 8);
+        sequence.to('#appear3', 0.7, {opacity:1}, 'next2');
+        sequence.add('next3', 13);
+        sequence.to('#appear4', 0.7, {opacity:1}, 'next3');
+    },
+
+    playComparisonIntro: () => {
+        Animations.playPlanetsComparison();
+    },
+
+    playPlanetsComparison: () => {
+        // TweenMax.to('.contour_terre', 20, {transformOrigin: "50% 50%", rotation: 360, force3D: true, ease: Power0.easeNone, repeat: -1});
+    },
+
+    playGravity: () => {
+
+        function loop() {
+            let jumper = document.querySelector('#jumper .landscape');
+            setTimeout(() => {
+
+                if (jumper.classList.contains('paysageTerre')) {
+                    jumper.classList.remove('paysageTerre');
+                    jumper.classList.add('paysageMars');
+                    jumper.src = 'images/paysages/mars.svg';
+                    Datas.drawGravity('mars');
+                } else if (jumper.classList.contains('paysageMars')) {
+                    jumper.classList.remove('paysageMars');
+                    jumper.classList.add('paysageTerre');
+                    jumper.src = 'images/paysages/terre.svg';
+                    Datas.drawGravity('terre');
+                }
+                loop();
+            }, 5000);
+        }
+
+        loop();
+    },
+
+    playSolarSystem: () => {
+        TweenMax.to('.space .mars', 10, {
+            transformOrigin: "50% 250px",
+            rotation: 360,
+            force3D: true,
+            ease: Power0.easeNone,
+            repeat: -1
+        });
+        TweenMax.to('.space .terre', 5, {
+            transformOrigin: "50% 162.5px",
+            rotation: 360,
+            force3D: true,
+            ease: Power0.easeNone,
+            repeat: -1
+        });
+
+        function loop() {
+            let graph = document.querySelector('#day_year');
+            setTimeout(() => {
+
+                if (graph.classList.contains('day')) {
+                    graph.classList.remove('day');
+                    graph.classList.add('year');
+                    Datas.drawTime('year');
+                } else if (graph.classList.contains('year')) {
+                    graph.classList.remove('year');
+                    graph.classList.add('day');
+                    Datas.drawTime('day');
+                }
+                loop();
+            }, 5000);
+        }
+
+        loop();
+    },
+
+    jump: () => {
+        let land = document.querySelector('.landscape');
+        if (land.classList.contains('paysageTerre')) {
+            let seq = new TimelineLite();
+            seq.to('.mini_cosmonaut', 0.5, {y: "-=30px", force3D: true, ease: Power0.easeNone});
+            seq.to('.mini_cosmonaut', 0.5, {y: "+=30px", force3D: true, ease: Power0.easeNone});
+        } else if (land.classList.contains('paysageMars')) {
+            let seq = new TimelineLite();
+            seq.to('.mini_cosmonaut', 1.5, {y: "-=90px", force3D: true, ease: Power0.easeNone});
+            seq.to('.mini_cosmonaut', 1.5, {y: "+=90px", force3D: true, ease: Power0.easeNone});
+        }
+    },
+
     /** ********************************** **/
     openAboutModal: () => {
         document.querySelector('#about_modal').style.display = 'block';
-        TweenMax.to("#about_modal", 0.5, {opacity: "1", ease: Power1.easeOut, force3D: true});
+        TweenLite.to("#about_modal", 0.5, {opacity: "1", ease: Power1.easeOut, force3D: true});
     },
 
     closeAboutModal: () => {
-        TweenMax.to("#about_modal", 0.5, {
+        TweenLite.to("#about_modal", 0.5, {
             opacity: "0", ease: Power1.easeOut, force3D: true,
             onComplete: () => {
                 document.querySelector('#about_modal').style.display = 'none';
@@ -46,8 +149,6 @@ const Animations = {
         });
     },
     /** ********************************** **/
-
-
 };
 
 export default Animations;

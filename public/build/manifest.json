@@ -2,9 +2,8 @@
   "build/app.css": "/build/app.css",
   "build/app.js": "/build/app.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/fonts/league-gothic-italic-regular.ttf": "/build/fonts/league-gothic-italic-regular.ac4f47f6.ttf",
-  "build/fonts/subset-LeagueGothic-Italic.woff": "/build/fonts/subset-LeagueGothic-Italic.1078b802.woff",
-  "build/fonts/subset-LeagueGothic-Italic.woff2": "/build/fonts/subset-LeagueGothic-Italic.1c34557a.woff2",
-  "build/fonts/league-gothic-italic-regular.woff": "/build/fonts/league-gothic-italic-regular.1078b802.woff",
-  "build/fonts/league-gothic-italic-regular.woff2": "/build/fonts/league-gothic-italic-regular.1c34557a.woff2"
+  "build/fonts/subset-LeagueGothic-Italic.ttf": "/build/fonts/subset-LeagueGothic-Italic.2f844d88.ttf",
+  "build/fonts/subset-LeagueGothic-Italic.eot": "/build/fonts/subset-LeagueGothic-Italic.42fc417d.eot",
+  "build/images/SpaceX-Logo.svg": "/build/images/SpaceX-Logo.svg",
+  "build/images/subset-LeagueGothic-Italic.svg": "/build/images/subset-LeagueGothic-Italic.svg"
 }

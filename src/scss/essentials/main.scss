@@ -3,7 +3,7 @@ html, body, main {
   height: 100%;
   margin: 0;
   color: $white;
-  overflow-x: hidden;
+  font-family: Ruda, sans-serif;
 }
 
 html {
@@ -11,21 +11,13 @@ html {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d64d51+0,3b3652+100 */
     background: #3b3652; /* Old browsers */
     background: -moz-linear-gradient(left, #d64d51 0%, #3b3652 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #d64d51 0%,#3b3652 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #d64d51 0%,#3b3652 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d64d51', endColorstr='#3b3652',GradientType=1 ); /* IE6-9 */
+    background: -webkit-linear-gradient(left, #d64d51 0%, #3b3652 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #d64d51 0%, #3b3652 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d64d51', endColorstr='#3b3652', GradientType=1); /* IE6-9 */
 
     main {
 
-      h1 {
-        position: absolute;
-        font-size: 2em;
-        text-align: center;
-        width: 200px;
-        height: 50px;
-        top: calc(50% - 50px);
-        left: calc(50% - 100px);
-      }
+      //cursor: url('./../images/fusee.svg') 2 2, auto;
 
       #about_btn {
         position: absolute;
@@ -35,7 +27,6 @@ html {
         margin: 0;
         font-size: 25px;
         z-index: 2;
-        font-family: Ruda, sans-serif;
         font-weight: 700;
         cursor: pointer;
         border-bottom: 2px solid $white;
@@ -59,132 +50,375 @@ html {
           right: 20px;
           cursor: pointer;
         }
+
+        #contenu_about {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+
+          font-size: 36px;
+
+          #pictos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            width: 100%;
+
+            div {
+              height: 200px;
+              width: 200px;
+
+              img {
+                height: 200px;
+                width: 200px;
+              }
+
+              &:after {
+                font-size: 40px;
+                font-family: "League Gothic", sans-serif;
+
+              }
+
+              &#micka {
+                &:after {
+                  content: 'Mickaël Debalme';
+                }
+              }
+
+              &#nitya {
+                top: 10px;
+
+                &:after {
+                  content: 'Nitya Tchangodei';
+                }
+              }
+            }
+          }
+
+          #logos {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            width: 600px;
+
+            img {
+
+              &#logo_gobelins {
+                height: 100px;
+                width: auto;
+              }
+
+              &#logo_cci {
+                height: 50px;
+                width: auto;
+              }
+            }
+          }
+        }
+
+        #sources {
+
+        }
       }
 
       #stars {
         z-index: -1;
       }
 
-      .section {
-        //position: relative;
-        //width: 100%;
-        //height: 100%;
+      #fullpage {
+        .section {
 
-        &#landing {
+          position: relative !important;
 
-          #title_container {
+          &:not(:first-child) {
+            //opacity: 0;
+          }
+
+          .flex_blocs_row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+          }
+
+          .fifty_fifty {
+
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 30px;
+
+            .left {
+              float: left;
+              width: 50%;
+              height: 100%;
+            }
+
+            .right {
+              margin-left: 50%;
+              height: 100%;
+            }
+
+            &.h200 {
+              height: 200px;
+
+              .left {
+                height: 200px;
+              }
+
+              .right {
+                height: 200px;
+              }
+            }
+          }
+
+          .top_text {
+            height: auto;
+            top: 5%;
+            width: 70%;
+            left: 15%;
+            text-align: center;
+          }
+
+          .relative_text {
+            height: auto;
+            width: 70%;
+            left: 15%;
+            text-align: center;
+          }
+
+          .left_text {
+            width: 80%;
+            text-align: justify;
+            position: relative;
+            top: 25px;
+            font-size: 33px;
+            margin-left: 20px;
+          }
+
+          .centered_text {
+            text-align: justify;
+            width: 80%;
+            left: 10%;
+          }
+
+          .center {
+            text-align: center !important;
+          }
+
+          .top_text, .centered_text, .relative_text {
+            position: relative;
+            z-index: 4;
+
+            p {
+              &.headline {
+
+                &.league {
+                  font-family: "League Gothic", sans-serif;
+                }
+
+                &.big {
+                  font-size: 33px;
+
+                  &.league {
+                    font-size: 47px;
+                  }
+
+                  strong {
+                    font-weight: 700;
+                    //font-size: 40px;
+                  }
+                }
+
+                &.medium {
+                  font-size: 30px;
+
+                  &.league {
+                    font-size: 44px;
+                  }
+
+                  strong {
+                    font-weight: 700;
+                    //font-size: 35px;
+                  }
+                }
+              }
+
+              &.link {
+                a {
+                  img {
+                    height: 150px;
+                    max-width: 600px;
+                  }
+                }
+              }
+            }
+          }
+
+          &#landing {
+
+            #title_container {
+              position: relative;
+              width: 552px;
+              height: 552px;
+              top: calc(50vh - 326px);
+              margin: 0;
+              left: calc(50vw - 261px);
+              z-index: 2;
+              opacity: 0.5;
+              text-transform: uppercase;
+              font-family: "League Gothic", sans-serif;
+
+              &:before {
+                position: absolute;
+                content: 'Demain,';
+                font-size: 200px;
+                left: -400px;
+                top: calc(50% - 100px);
+              }
+
+              &:after {
+                position: absolute;
+                content: 'Mars ?';
+                font-size: 200px;
+                right: -350px;
+                top: calc(50% - 100px);
+              }
+            }
+
+            #patates {
+
+              .patate {
+                backface-visibility: hidden;
+                position: absolute;
+                height: auto;
+                opacity: 0.5;
+
+                &.one {
+                  width: 1300px;
+                  top: 500px;
+                  left: -750px;
+                }
+
+                &.two {
+                  width: 1400px;
+                  top: 700px;
+                  right: -750px;
+                }
+
+                &.three {
+                  width: 1500px;
+                  top: -300px;
+
+                  -moz-transform: scale(1, -1) rotate(20deg);
+                  -webkit-transform: scale(1, -1) rotate(20deg);
+                  -o-transform: scale(1, -1) rotate(20deg);
+                  -ms-transform: scale(1, -1) rotate(20deg);
+                  transform: scale(1, -1) rotate(20deg);
+                }
+              }
+            }
+
+            #cometes {
+
+              .comete {
+                backface-visibility: hidden;
+                position: absolute;
+                height: auto;
+
+                &.one {
+                  width: 400px;
+                  top: -100px;
+                  left: -400px;
+                  transform: rotate(4deg);
+                }
+
+                &.two {
+                  width: 200px;
+                  top: -80px;
+                  left: -500px;
+                  transform: rotate(4deg);
+                }
+
+                &.three {
+                  width: 180px;
+                  top: -430px;
+                  left: 920px;
+                  transform: rotate(95deg);
+                }
+
+                &.four {
+                  width: 300px;
+                  top: -300px;
+                  left: 300px;
+                  transform: rotate(4deg);
+                }
+
+                &.five {
+                  width: 250px;
+                  top: -230px;
+                  left: 800px;
+                  transform: rotate(4deg);
+                }
+              }
+            }
+          }
+
+          #outro_container {
             position: relative;
             width: 552px;
             height: 552px;
-            top: calc(50vh - 326px);
+            top: calc(50vh - 276px);
             margin: 0;
             left: calc(50vw - 261px);
             z-index: 2;
-            opacity: 0.5;
+            //opacity: 0.5;
+          }
+
+          #outro_title {
+            position: absolute;
             text-transform: uppercase;
             font-family: "League Gothic", sans-serif;
+            font-size: 180px;
+            top: calc(50vh - 140px);
+            width: 100%;
+            text-align: center;
+            z-index: 3;
+          }
+
+          #choix_mission {
+            position: relative;
+            top: 40px;
+            font-size: 40px;
+            text-transform: uppercase;
+            font-family: "League Gothic", sans-serif;
+            width: 300px;
+            left: calc(50vw - 150px);
+            z-index: 3;
+            text-align: center;
 
             &:before {
+              content: url('../../../public/images/SpaceX-Logo.svg');
+              height: 40px;
+              width: auto;
+              border: 2px solid white;
               position: absolute;
-              content: 'Demain,';
-              font-size: 200px;
-              left: -400px;
-              top: calc(50% - 100px);
             }
 
             &:after {
+              content: url('../images/SpaceX-Logo.svg');
+              height: 40px;
+              width: auto;
+              border: 2px solid white;
               position: absolute;
-              content: 'Mars ?';
-              font-size: 200px;
-              right: -350px;
-              top: calc(50% - 100px);
             }
           }
-
-          #patates {
-
-            .patate {
-              backface-visibility: hidden;
-              position: absolute;
-              height: auto;
-              opacity: 0.5;
-
-              &.one {
-                width: 1300px;
-                top: 500px;
-                left: -750px;
-              }
-
-              &.two {
-                width: 1400px;
-                top: 700px;
-                right: -750px;
-              }
-
-              &.three {
-                width: 1500px;
-                top: -300px;
-
-                -moz-transform: scale(1, -1) rotate(20deg);
-                -webkit-transform: scale(1, -1) rotate(20deg);
-                -o-transform: scale(1, -1) rotate(20deg);
-                -ms-transform: scale(1, -1) rotate(20deg);
-                transform: scale(1, -1) rotate(20deg);
-              }
-            }
-          }
-
-          #cometes {
-
-            .comete {
-              backface-visibility: hidden;
-              position: absolute;
-              height: auto;
-
-              &.one {
-                width: 400px;
-                top: -100px;
-                left: -400px;
-                transform: rotate(4deg);
-              }
-
-              &.two {
-                width: 200px;
-                top: -80px;
-                left: -500px;
-                transform: rotate(4deg);
-              }
-
-              &.three {
-                width: 180px;
-                top: -430px;
-                left: 920px;
-                transform: rotate(95deg);
-              }
-
-              &.four {
-                width: 300px;
-                top: -300px;
-                left: 300px;
-                transform: rotate(4deg);
-              }
-
-              &.five {
-                width: 250px;
-                top: -230px;
-                left: 800px;
-                transform: rotate(4deg);
-              }
-            }
-          }
-        }
-
-        &#first {
-
-        }
-
-        &#second {
-
         }
       }
 
@@ -194,6 +428,7 @@ html {
         width: 100px;
         bottom: 0;
         left: calc(50% - 50px);
+        opacity: 0;
 
         .mouse-icon {
           width: 25px;

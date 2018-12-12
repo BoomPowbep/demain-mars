@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<img src="images/fusee.svg" style="display: none;">
+
 <div id="stars" style="position: fixed;width: 100%;height: 100%;"></div>
 
 <main>
@@ -15,12 +17,30 @@
     <p id="about_btn">À propos</p>
 
     <div id="about_modal">
+
         <img src="images/about/petitecroix.svg" id="about_close"/>
+
+        <div id="contenu_about">
+            <p>Un projet étudiant de <span style="color: red;">Data Vizualisation</span> interactif par :</p>
+            <div id="pictos">
+                <div id="micka"><img src="images/about/micka_visage.svg"></div>
+                <div id="nitya"><img src="images/about/nitya_visage.svg"></div>
+            </div>
+            <div id="logos">
+                <img src="images/about/gobelins.png" id="logo_gobelins">
+                <img src="images/about/cci.svg" id="logo_cci">
+            </div>
+        </div>
+
+        <div id="sources">
+
+        </div>
+
     </div>
 
     <div id="fullpage">
 
-        <div class="section" data-anchor="1" id="landing">
+        <div class="section" id="landing">
             <div id="title_container">
                 <img src="images/mars.svg" id="title"/>
             </div>
@@ -46,11 +66,146 @@
             </div>
         </div>
 
-        <div class="section" data-anchor="2">Some section</div>
+        <div class="section">
 
-        <div class="section" data-anchor="3">Some section</div>
+            <div class="centered_text intro_speech">
+                <!--<p>Dans un monde en constante évolution, là où va la science, va l'avenir.</p>-->
+                <p class="headline big appear" id="appear1">En 2015, <strong>93%</strong> des français considéraient le réchauffement
+                    climatique comme une <br>réalité et <strong>16%</strong>
+                    pensaient même qu’il était <strong>déjà trop tard</strong> pour faire quelque chose. </p>
+                <p class="headline big appear" id="appear2">Le célèbre physicien <strong>Stephen Hawking</strong> a prévenu que si nous ne
+                    trouvions pas une <br>
+                    nouvelle planète d'ici <strong>100 ans</strong>, l'humanité allait <strong>disparaître</strong>.
+                </p>
+                <p class="headline big appear"  id="appear3">Du fait de sa proximité, Mars apparaît comme la destination <strong>la plus
+                    accessible</strong>. <br>De 1960 à aujourd'hui, les agences spatiales ont envoyé <strong>56
+                    missions</strong> <br>non habitées vers la planète rouge.</p>
 
-        <div class="section" data-anchor="4">Some section</div>
+                <p class="headline big appear"  id="appear4">Pour les années qui arrivent, la volonté tend désormais à y envoyer des
+                    humains.</p>
+            </div>
+
+        </div>
+
+        <div class="section flex_contain">
+
+            <div class="top_text">
+                <p class="headline big league">Mais connaissez-vous vraiment les différences entre la Terre et Mars ?</p>
+            </div>
+
+            <!--<div class="contour_terre"></div>-->
+
+            <div id="planetes_confrontation">
+                <div class="terre">
+                    <img src="images/terre.svg">
+                    <p class="planet_title">Terre</p>
+                </div>
+                <div class="mars">
+                    <img src="images/mars2.svg">
+                    <p class="planet_title">Mars</p>
+                </div>
+            </div>
+
+            <div class="relative_text">
+                <p class="headline medium smaller_margin_responsive" style="margin-top:120px;">Mars est <strong>2 fois</strong> plus petite que la
+                    Terre</p>
+            </div>
+
+            <div class="fifty_fifty h200">
+                <div class="left">
+                    <div class="graph bar" id="diameter"></div>
+                </div>
+                <div class="right">
+                    <div class="left_text">
+                        <p class="headline medium">En raison de l'absence d'océans, la surface
+                            habitable sur Mars est presque équivalente à celle de la Terre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <div class="top_text">
+                <p class="headline medium league">La gravité est trois fois moidre que la nôtre
+                </p>
+            </div>
+
+            <!--<div class="fifty_fifty h200">-->
+                <!--<div class="left">-->
+
+                <!--</div>-->
+                <!--<div class="right gravityBar">-->
+                    <!--<div class="graph bar" id="gravity"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="graph bar" id="gravity"></div>
+
+            <div class="relative_text" style="top: 100px;">
+                <p class="headline medium">Effets santé blabla</p>
+            </div>
+
+            <div class="relative_text" style="position:absolute!important; top: 90%">
+                <p class="headline medium" style="text-shadow: 0 0 2px #000000;">Cliquez sur l'astronaute pour observer les effets de la gravité !</p>
+            </div>
+
+            <div id="jumper">
+                <img class="landscape paysageTerre" src="images/paysages/terre.svg">
+                <img class="mini_cosmonaut" src="images/cosmonot.svg">
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <div class="top_text">
+                <p class="headline medium league">Une année martienne est deux fois plus longue</p>
+            </div>
+
+            <div class="relative_text">
+                <p class="headline medium league">En revanche, une journée dure à peine plus de 24h</p>
+            </div>
+
+            <div class="flex_blocs_row">
+
+                <div class="space">
+                    <div class="orbite_terre"></div>
+                    <div class="orbite_mars"></div>
+                    <img src="images/sun.svg" class="sun">
+                    <img src="images/terre.svg" class="terre">
+                    <img src="images/mars2.svg" class="mars">
+                </div>
+
+                <div class="graph bar year" id="day_year"></div>
+
+            </div>
+
+        </div>
+
+        <div class="section">
+
+            <div class="top_text">
+                <p class="headline medium league">lol</p>
+            </div>
+
+            <div class="graph donut" id="agencies"></div>
+
+        </div>
+
+        <div class="section">
+
+            <div id="outro_container">
+                <img src="images/mars.svg" id="outro_img"/>
+            </div>
+
+            <div id="outro_title">Tenté(e) par l'aventure ?</div>
+
+            <div id="choix_mission">Faites votre choix</div>
+
+        </div>
 
     </div>
 

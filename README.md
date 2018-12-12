@@ -34,4 +34,6 @@ npm run serve
 
 ## Credits
 * Webpack config : [sample-project by Hugotgot](https://github.com/Hugotgot/sample-project)
-* Scroll: [fullPage.js by alvarotrigo](https://github.com/alvarotrigo/fullpage.js)
+* Scroll : [fullPage.js by alvarotrigo](https://github.com/alvarotrigo/fullpage.js)
+* Particles : [particles.js by VincentGarreau](https://github.com/VincentGarreau/particles.js/)
+

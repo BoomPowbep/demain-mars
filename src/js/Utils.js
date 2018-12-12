@@ -1,4 +1,7 @@
+const Utils = {
 
-const Utils = {};
+
+
+};
 
 export default Utils;

@@ -1,0 +1,117 @@
+@media only screen and (max-width: 1450px) {
+
+  #title_container {
+    width: 400px !important;
+    height: 400px !important;
+    top: calc(50vh - 225px) !important;
+    left: calc(50vw - 200px) !important;
+
+    &:before {
+      font-size: 150px !important;
+      left: -300px !important;
+      top: calc(50% - 75px) !important;
+    }
+
+    &:after {
+      font-size: 150px !important;
+      right: -260px !important;
+      top: calc(50% - 75px) !important;
+    }
+  }
+
+  #outro_container {
+    width: 400px !important;
+    height: 400px !important;
+    top: calc(50vh - 225px) !important;
+    left: calc(50vw - 200px) !important;
+  }
+
+  #outro_title {
+    font-size: 150px !important;
+    top: calc(50vh - 120px) !important;
+  }
+
+  #choix_mission {
+    top: 30px !important;
+    font-size: 30px !important;
+    width: 300px !important;
+    left: calc(50vw - 150px) !important;
+  }
+}
+
+
+@media only screen and (max-height: 930px) {
+
+
+  #planetes_confrontation {
+    top: 20px !important;
+
+    .terre, .mars {
+
+      .planet_title {
+        font-size: 50px !important;
+        width: 80px !important;
+      }
+    }
+
+    .terre {
+      width: 200px !important;
+      height: 200px !important;
+
+      .planet_title {
+        top: -130px !important;
+        left: 65px !important;
+      }
+    }
+
+    .mars {
+      width: 200px !important;
+      height: 200px !important;
+
+      img {
+        top: 75px !important;
+        left: 75px !important;
+        width: 66px !important;
+      }
+
+      .planet_title {
+        top: 5px !important;
+        left: 145px !important;
+      }
+    }
+  }
+
+  .smaller_margin_responsive {
+    margin-top: 50px !important;
+  }
+
+  .left_text {
+    font-size: 28px!important;
+  }
+
+  .h200 {
+    height: 190px!important;
+
+    .left {
+      height: 190px!important;
+    }
+
+    .right {
+      height: 190px!important;
+    }
+  }
+}
+
+
+@media only screen and (max-height: 750px) {
+
+  .headline {
+    &.big {
+      font-size: 30px !important;
+
+      &.league {
+        font-size: 44px !important;
+      }
+    }
+  }
+}
