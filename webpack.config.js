@@ -19,7 +19,8 @@ Encore
     .enableSassLoader()
 
     .enableSingleRuntimeChunk()
-    .enableSourceMaps(Encore.isProduction())
+    // .enableSourceMaps(Encore.isProduction())
+    .enableSourceMaps(false)
     .enableVersioning(false)
      .configureFilenames({
         images: 'images/[name].[ext]'

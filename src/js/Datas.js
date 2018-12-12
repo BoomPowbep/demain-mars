@@ -5,9 +5,6 @@
  * dataset[0] = tempDataset[0];
  */
 
-import * as d3 from 'd3';
-import * as c3 from 'c3';
-
 import BarChart from 'britecharts/dist/umd/bar.min';
 import donut from 'britecharts/dist/umd/donut.min';
 
@@ -15,9 +12,6 @@ const colors = require('britecharts/src/charts/helpers/color');
 const miniTooltip = require('britecharts/src/charts/mini-tooltip');
 const legend = require('britecharts/src/charts/legend');
 const d3Selection = require('d3-selection');
-
-let legendChart;
-let redrawCharts;
 
 import 'britecharts/dist/css/britecharts.min.css';
 

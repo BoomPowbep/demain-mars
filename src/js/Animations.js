@@ -1,10 +1,10 @@
 import {TweenLite, TweenMax, TimelineLite} from "gsap";
-import CSSRulePlugin from "gsap/CSSRulePlugin";
 import Datas from './Datas';
 
 const Animations = {
 
     playIntro: () => {
+        console.log('▶️ Play Intro');
         let sequence = new TimelineLite({
             onComplete: () => {
                 let els = document.querySelectorAll('#fullpage .section:not(:first-child)');
@@ -43,6 +43,7 @@ const Animations = {
     },
 
     revealIntroSpeech: () => {
+        console.log('▶️ Play Intro Speech');
         let sequence = new TimelineLite();
         sequence.to('#appear1', 0.7, {opacity:1});
         sequence.add('next1', 4);
@@ -62,7 +63,7 @@ const Animations = {
     },
 
     playGravity: () => {
-
+        console.log('▶️ Play Gravity Animations');
         function loop() {
             let jumper = document.querySelector('#jumper .landscape');
             setTimeout(() => {
@@ -86,6 +87,7 @@ const Animations = {
     },
 
     playSolarSystem: () => {
+        console.log('▶️ Play Solar System');
         TweenMax.to('.space .mars', 10, {
             transformOrigin: "50% 250px",
             rotation: 360,

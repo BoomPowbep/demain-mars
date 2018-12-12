@@ -5,6 +5,7 @@ import Datas from './Datas';
 class ScrollHandler {
 
     constructor() {
+        console.log('⛓ Scroll handler');
         this.firstIntro = false;
         this.firstDiam = false;
         this.firstGrav = false;
@@ -13,7 +14,6 @@ class ScrollHandler {
     }
 
     init() {
-
         let fullPageInstance = new fullpage('#fullpage', {
             licenseKey: 'IwI5sxPw!;',
             navigation: false,

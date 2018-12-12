@@ -3,7 +3,10 @@ html, body, main {
   height: 100%;
   margin: 0;
   color: $white;
-  font-family: Ruda, sans-serif;
+  //font-family: Ruda, sans-serif;
+  font-family: 'Aileron', sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 html {
@@ -20,6 +23,7 @@ html {
       //cursor: url('./../images/fusee.svg') 2 2, auto;
 
       #about_btn {
+        display: none;
         position: absolute;
         top: 30px;
         right: 30px;
@@ -56,7 +60,7 @@ html {
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
+          justify-content: space-between;
           align-items: center;
 
           font-size: 36px;
@@ -64,7 +68,7 @@ html {
           #pictos {
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: flex-end;
             width: 100%;
 
@@ -79,19 +83,20 @@ html {
 
               &:after {
                 font-size: 40px;
-                font-family: "League Gothic", sans-serif;
-
+                font-family: 'League Gothic', sans-serif;
+                font-weight: normal;
+                font-style: italic;
               }
 
               &#micka {
+                margin-right: 70px;
                 &:after {
                   content: 'Mickaël Debalme';
                 }
               }
 
               &#nitya {
-                top: 10px;
-
+                margin-left: 70px;
                 &:after {
                   content: 'Nitya Tchangodei';
                 }
@@ -109,12 +114,12 @@ html {
             img {
 
               &#logo_gobelins {
-                height: 100px;
+                height: 80px;
                 width: auto;
               }
 
               &#logo_cci {
-                height: 50px;
+                height: 40px;
                 width: auto;
               }
             }
@@ -122,7 +127,10 @@ html {
         }
 
         #sources {
-
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 4;
         }
       }
 
@@ -130,7 +138,14 @@ html {
         z-index: -1;
       }
 
+      #mobile_view {
+        display: none;
+      }
+
       #fullpage {
+
+        display: none;
+
         .section {
 
           position: relative !important;
@@ -204,8 +219,8 @@ html {
 
           .centered_text {
             text-align: justify;
-            width: 80%;
-            left: 10%;
+            width: 1250px;
+            left: calc(50vw - 625px);
           }
 
           .center {
@@ -220,7 +235,10 @@ html {
               &.headline {
 
                 &.league {
-                  font-family: "League Gothic", sans-serif;
+                  font-family: 'League Gothic', sans-serif;
+                  font-weight: normal;
+                  font-style: italic;
+
                 }
 
                 &.big {
@@ -273,7 +291,10 @@ html {
               z-index: 2;
               opacity: 0.5;
               text-transform: uppercase;
-              font-family: "League Gothic", sans-serif;
+              font-family: 'League Gothic', sans-serif;
+              font-weight: normal;
+              font-style: italic;
+
 
               &:before {
                 position: absolute;
@@ -384,8 +405,11 @@ html {
           #outro_title {
             position: absolute;
             text-transform: uppercase;
-            font-family: "League Gothic", sans-serif;
-            font-size: 180px;
+            font-family: 'League Gothic', sans-serif;
+            font-weight: normal;
+            font-style: italic;
+
+            font-size: 150px;
             top: calc(50vh - 140px);
             width: 100%;
             text-align: center;
@@ -397,26 +421,41 @@ html {
             top: 40px;
             font-size: 40px;
             text-transform: uppercase;
-            font-family: "League Gothic", sans-serif;
+            font-family: 'League Gothic', sans-serif;
+            font-weight: normal;
+            font-style: italic;
+
             width: 300px;
             left: calc(50vw - 150px);
             z-index: 3;
             text-align: center;
 
             &:before {
-              content: url('../../../public/images/SpaceX-Logo.svg');
+              content: url('../assets/images/SpaceX-Logo.svg');
+              //content: url('../../public/build/images/SpaceX-Logo.svg');
               height: 40px;
               width: auto;
               border: 2px solid white;
               position: absolute;
+              left: -400px;
+              top: -10px;
+              padding: 10px;
+
+              svg {
+                fill: #FFFFFF !important;
+              }
             }
 
             &:after {
-              content: url('../images/SpaceX-Logo.svg');
+              content: url('../assets/images/marsone.svg');
+              //content: url('../../public/build/images/marsone.svg');
               height: 40px;
-              width: auto;
+              width: 200px;
               border: 2px solid white;
               position: absolute;
+              right: -300px;
+              top: -10px;
+              padding: 10px;
             }
           }
         }
