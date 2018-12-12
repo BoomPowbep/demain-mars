@@ -1,33 +1,37 @@
 # Demain, Mars ?
 
 Workshop Dataviz.
-[...]
+
+D'après les plus éminents astrophysiciens comme Stephen Hawking, l'humanité doit devenir multi-planétaire pour survivre.
+Des dizaines d'années après la Lune, Mars est désignée comme destination de premier choix pour les futurs colons.
+
+A quoi doivent s'attendre les futurs colons martiens ?
 
 ## Installation
 
-First, clone the repository
+* Cloner le répertoire :
 ```
 git clone https://github.com/BoomPowbep/demain-mars.git
 ```
 
-Then, install dependencies
+* Installer les dépendances :
 ```
 npm install
 ```
 
-## Run
-### Encore
-#### Watch (dev)
+## Compilation
+
+#### Watch (dev only)
 ```
 npm run encore.watch
 ```
 
-#### Build 
+#### Build pour production 
 ```
 npm run encore.prod
 ```
 
-### HTTP-Server
+### Serveur HTTP
 ```
 npm run serve
 ```
