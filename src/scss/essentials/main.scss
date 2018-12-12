@@ -89,7 +89,7 @@ html {
               }
 
               &#micka {
-                margin-right: 70px;
+                margin-right: 100px;
 
                 &:after {
                   content: 'Mickaël Debalme';
@@ -97,7 +97,7 @@ html {
               }
 
               &#nitya {
-                margin-left: 70px;
+                margin-left: 100px;
 
                 &:after {
                   content: 'Nitya Tchangodei';
@@ -133,6 +133,34 @@ html {
           bottom: 0;
           right: 0;
           z-index: 4;
+          width: 150px;
+          height: 130px;
+
+          .pTitle {
+            color: red;
+            font-family: 'League Gothic', sans-serif;
+            font-weight: normal;
+            font-style: italic;
+            font-size: 40px;
+            position:relative;
+            left: 0;
+            top: 0;
+          }
+
+          .pLink {
+            position: absolute;
+            bottom: 0;
+
+            a {
+              text-decoration: none;
+              color: grey;
+
+              &:visited {
+                text-decoration: none;
+                color: grey;
+              }
+            }
+          }
         }
       }
 
@@ -153,7 +181,7 @@ html {
           position: relative !important;
 
           &:not(:first-child) {
-            //opacity: 0;
+            opacity: 0;
           }
 
           .flex_blocs_row {
@@ -164,21 +192,26 @@ html {
             width: 100%;
           }
 
+
+
           .fifty_fifty {
 
             width: 100%;
             height: auto;
             position: relative;
             top: 30px;
+            display: flex;
+            justify-content: center;
 
             .left {
-              float: left;
+              //float: left;
               width: 50%;
               height: 100%;
             }
 
             .right {
-              margin-left: 50%;
+              //margin-left: 50%;
+              width: 50%;
               height: 100%;
             }
 
@@ -194,6 +227,37 @@ html {
               }
             }
           }
+
+          //.fifty_fifty {
+          //
+          //  width: 100%;
+          //  height: auto;
+          //  position: relative;
+          //  top: 30px;
+          //
+          //  .left {
+          //    float: left;
+          //    width: 50%;
+          //    height: 100%;
+          //  }
+          //
+          //  .right {
+          //    margin-left: 50%;
+          //    height: 100%;
+          //  }
+          //
+          //  &.h200 {
+          //    height: 200px;
+          //
+          //    .left {
+          //      height: 200px;
+          //    }
+          //
+          //    .right {
+          //      height: 200px;
+          //    }
+          //  }
+          //}
 
           .top_text {
             height: auto;
@@ -416,6 +480,24 @@ html {
             width: 100%;
             text-align: center;
             z-index: 3;
+          }
+
+          #outroSavoirPlus {
+
+            width: 100%;
+            text-align:center;
+            position: relative;
+            top: 130px;
+            p {
+              font-size: 26px;
+            }
+            img {
+              margin: auto;
+              width: 200px;
+              height:auto;
+              padding: 7px;
+              border: 2px solid #FFFFFF;
+            }
           }
         }
       }

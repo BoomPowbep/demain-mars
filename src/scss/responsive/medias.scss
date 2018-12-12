@@ -36,22 +36,7 @@
 
   #outro_title {
     font-size: 130px !important;
-    top: calc(50vh - 120px) !important;
-  }
-
-  #choix_mission {
-    top: 30px !important;
-    font-size: 30px !important;
-    width: 300px !important;
-    left: calc(50vw - 150px) !important;
-
-    &:before {
-      left: -380px !important;
-    }
-
-    &:after {
-      right: -250px !important;
-    }
+    top: calc(50vh - 90px) !important;
   }
 }
 
