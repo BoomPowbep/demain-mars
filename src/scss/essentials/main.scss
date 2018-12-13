@@ -483,11 +483,12 @@ html {
           }
 
           #outroSavoirPlus {
-
             width: 100%;
             text-align:center;
             position: relative;
             top: 130px;
+            z-index: 5;
+
             p {
               font-size: 26px;
             }
