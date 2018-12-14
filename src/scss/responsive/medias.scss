@@ -40,6 +40,18 @@
   }
 }
 
+@media only screen and (min-height: 1000px) {
+
+  #gravity {
+    top: 140px!important;
+  }
+
+  .relative_text {
+    &#gravityTxt {
+      //top: 200px !important;
+    }
+  }
+}
 
 @media only screen and (max-height: 930px) {
 

@@ -83,7 +83,7 @@ const Datas = {
             dataset = [
                 {
                     value: 1,
-                    name: 'Normal:1G'
+                    name: 'Normal'
                 },
                 {
                     value: 1,
@@ -96,7 +96,7 @@ const Datas = {
             dataset = [
                 {
                     value: 1,
-                    name: 'Normal.1G'
+                    name: 'Normal'
                 },
                 {
                     value: 0.379,

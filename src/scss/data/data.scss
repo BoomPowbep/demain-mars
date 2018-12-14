@@ -208,7 +208,7 @@
     height: 175px;
     position: relative;
     left: calc(50% - 400px);
-    top:30px;
+    top: 140px!important;
   }
 
   &#day_year {
@@ -221,7 +221,7 @@
     height: 500px;
 
     &:after {
-      content: 'Bilan des missions passées';
+      content: 'Bilan total des missions';
       width: 500px;
       height: auto;
       font-size: 27px;

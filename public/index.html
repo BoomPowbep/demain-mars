@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Demain, Mars ?</title>
     <link rel="stylesheet" href="build/app.css">
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png"/>
 </head>
 <body>
 
-<img  alt="Fusée" src="images/fusee.svg" style="display: none;">
+<img alt="Fusée" src="images/fusee.svg" style="display: none;">
 
 <div id="stars" style="position: fixed;width: 100%;height: 100%;"></div>
 
@@ -22,7 +22,8 @@
         <img alt="Close about" src="images/about/petitecroix.svg" id="about_close"/>
 
         <div id="contenu_about">
-            <p style="margin-top: 50px;">Un projet étudiant de <span style="color: red;">Data Vizualisation</span> interactif par :</p>
+            <p style="margin-top: 50px;">Un projet étudiant de <span style="color: red;">Data Vizualisation</span>
+                interactif par :</p>
             <div id="pictos" style="margin-top: -135px;">
                 <div id="micka"><img alt="Visage Micka" src="images/about/micka_visage.svg"></div>
                 <div id="nitya"><img alt="Visage Nitya" src="images/about/nitya_visage.svg"></div>
@@ -35,13 +36,35 @@
 
         <div id="sources">
             <p class="pTitle">Sources</p>
-            <p class="pLink"><a target="_blank" href="https://nssdc.gsfc.nasa.gov/planetary/chronology_mars.html">1</a> / <a target="_blank" href="http://www-k12.atmos.washington.edu/k12/resources/mars_data-information/mars_overview.html">2</a> / <a target="_blank" href="https://www.ipsos.com/fr-fr/les-francais-face-au-changement-climatique">3</a> / <a target="_blank" href="https://blogs.letemps.ch/pierre-brisson/2017/05/23/cest-la-gravite-qui-fera-des-colons-terriens-de-vrais-martiens/">4</a> / <a target="_blank" href="https://www.popsci.com/stephen-hawking-human-extinction-colonize-mars">5</a></p>
+            <p class="pLink"><a target="_blank" href="https://nssdc.gsfc.nasa.gov/planetary/chronology_mars.html">1</a>
+                / <a target="_blank"
+                     href="http://www-k12.atmos.washington.edu/k12/resources/mars_data-information/mars_overview.html">2</a>
+                / <a target="_blank" href="https://www.ipsos.com/fr-fr/les-francais-face-au-changement-climatique">3</a>
+                / <a target="_blank"
+                     href="https://blogs.letemps.ch/pierre-brisson/2017/05/23/cest-la-gravite-qui-fera-des-colons-terriens-de-vrais-martiens/">4</a>
+                / <a target="_blank" href="https://www.popsci.com/stephen-hawking-human-extinction-colonize-mars">5</a>
+            </p>
         </div>
 
     </div>
 
     <div id="mobile_view">
-        <!-- TODO -->
+
+        <div id="mobile_content_container">
+
+            <div class="mobile_title">Demain, Mars ?</div>
+
+            <div class="mobile_text">
+                Une projet de Data Vizualisation interactif par Mickaël Debalme et Nitya Tchangodei.
+            </div>
+
+            <!--<div class="mobile_logos">-->
+            <!--<img alt="Logo Gobelins" src="images/about/gobelins.png" class="logo_gobelins">-->
+            <!--<img alt="Logo CCI" src="images/about/cci.svg" class="logo_cci">-->
+            <!--</div>-->
+
+        </div>
+
     </div>
 
     <div id="fullpage">
@@ -97,7 +120,7 @@
 
         </div>
 
-        <div class="section flex_contain">
+        <div class="section" id="flexcol">
 
             <div class="top_text">
                 <p class="headline big league">Mais connaissez-vous vraiment les différences entre la Terre et Mars
@@ -141,18 +164,19 @@
         <div class="section">
 
             <div class="top_text">
-                <p class="headline medium league">La gravité est trois fois moidre que la nôtre.
+                <p class="headline medium league">La gravité est trois fois moindre que la nôtre.
                 </p>
+            </div>
+
+            <div class="relative_text" style="top: 100px;">
+                <p class="headline medium">En raison de la faible gravité martienne, les astronautes devront pratiquer
+                    une
+                    activité physique intense afin de ne pas perdre trop de masse musculaire.</p>
             </div>
 
             <div class="graph bar" id="gravity"></div>
 
-            <div class="relative_text" style="top: 100px;">
-                <p class="headline medium">En raison de la faible gravité martienne, les astronautes devront pratiquer une
-                activité physique intense afin de ne pas perdre trop de masse musculaire.</p>
-            </div>
-
-            <div class="relative_text" style="position:absolute!important; top: 90%">
+            <div class="relative_text" id="gravityTxt" style="position:absolute!important; top: 90%">
                 <p class="headline medium" style="text-shadow: 0 0 2px #000000;">Cliquez sur l'astronaute pour observer
                     les effets de la gravité !</p>
             </div>
@@ -193,20 +217,26 @@
         <div class="section">
 
             <div class="top_text">
-                <p class="headline medium league">À plus de 76 millions de kilomètres de la Terre, la réussite d'une mission
-                ne tient qu'à un fil...</p>
+                <p class="headline medium league">À plus de 76 millions de kilomètres de la Terre, la réussite d'une
+                    mission
+                    ne tient qu'à un fil...</p>
             </div>
 
-            <div class="infoBox">Plus de la moitié des missions impliquant un atterrissage ont connu une défaillence.</div>
+            <div class="infoBox">Plus de la moitié des missions impliquant un atterrissage ont connu une défaillance.
+            </div>
 
             <div id="success_container">
 
                 <div class="graph donut" id="success"></div>
 
-                <div class="info_icon"><img alt="Info" src="images/information.svg"></div>
+                <!--<div class="info_icon"><img alt="Info" src="images/information.svg"></div>-->
 
                 <div class="graph donut" id="landings"></div>
 
+            </div>
+
+            <div class="bottom_text">
+                <p class="headline medium league">Plus de la moitié des missions impliquant un atterrissage ont connu une défaillance.</p>
             </div>
         </div>
 
@@ -220,7 +250,8 @@
 
             <div id="outroSavoirPlus">
                 <p>Pour en savoir plus</p>
-                <a target="_blank" href="https://www.spacex.com/mars"><img alt="Logo SpaceX" src="images/SpaceX-Logo.svg"></a>
+                <a target="_blank" href="https://www.spacex.com/mars"><img alt="Logo SpaceX"
+                                                                           src="images/SpaceX-Logo.svg"></a>
             </div>
 
         </div>

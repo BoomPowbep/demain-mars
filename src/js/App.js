@@ -33,6 +33,8 @@ class App {
         }
         else {
             document.querySelector('#mobile_view').style.display = 'block';
+            let rect =  document.querySelector('#mobile_content_container').getBoundingClientRect();
+            document.querySelector('#mobile_content_container').style.top = window.innerHeight /2 - rect.height / 2 + "px";
         }
     }
 
@@ -54,12 +56,12 @@ class App {
         });
 
         /** Infobox **/
-        document.querySelector('.info_icon').addEventListener('mousedown', () => {
-            document.querySelector('.infoBox').style.display = 'block';
-        });
-        document.querySelector('.infoBox').addEventListener('mousedown', () => {
-            document.querySelector('.infoBox').style.display = 'none';
-        });
+        // document.querySelector('.info_icon').addEventListener('mousedown', () => {
+        //     document.querySelector('.infoBox').style.display = 'block';
+        // });
+        // document.querySelector('.infoBox').addEventListener('mousedown', () => {
+        //     document.querySelector('.infoBox').style.display = 'none';
+        // });
         /** *********** **/
     }
 
