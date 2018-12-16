@@ -1,10 +1,3 @@
-/**
- * Inversement de l'ordre
- * tempDataset[0] = dataset[1];
- * dataset[1] = dataset[0];
- * dataset[0] = tempDataset[0];
- */
-
 import BarChart from 'britecharts/dist/umd/bar.min';
 import donut from 'britecharts/dist/umd/donut.min';
 

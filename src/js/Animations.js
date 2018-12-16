@@ -45,13 +45,13 @@ const Animations = {
     revealIntroSpeech: () => {
         console.log('▶️ Play Intro Speech');
         let sequence = new TimelineLite();
-        sequence.to('#appear1', 0.7, {opacity:1});
+        sequence.to('#appear1', 0.7, {opacity: 1});
         sequence.add('next1', 4);
-        sequence.to('#appear2', 0.7, {opacity:1}, 'next1');
+        sequence.to('#appear2', 0.7, {opacity: 1}, 'next1');
         sequence.add('next2', 8);
-        sequence.to('#appear3', 0.7, {opacity:1}, 'next2');
+        sequence.to('#appear3', 0.7, {opacity: 1}, 'next2');
         sequence.add('next3', 13);
-        sequence.to('#appear4', 0.7, {opacity:1}, 'next3');
+        sequence.to('#appear4', 0.7, {opacity: 1}, 'next3');
     },
 
     playComparisonIntro: () => {
@@ -64,6 +64,7 @@ const Animations = {
 
     playGravity: () => {
         console.log('▶️ Play Gravity Animations');
+
         function loop() {
             let jumper = document.querySelector('#jumper .landscape');
             setTimeout(() => {

@@ -30,11 +30,10 @@ class App {
             this.scrollHandler.init();
             this._initPositions();
             Animations.playIntro();
-        }
-        else {
+        } else {
             document.querySelector('#mobile_view').style.display = 'block';
-            let rect =  document.querySelector('#mobile_content_container').getBoundingClientRect();
-            document.querySelector('#mobile_content_container').style.top = window.innerHeight /2 - rect.height / 2 + "px";
+            let rect = document.querySelector('#mobile_content_container').getBoundingClientRect();
+            document.querySelector('#mobile_content_container').style.top = window.innerHeight / 2 - rect.height / 2 + "px";
         }
     }
 

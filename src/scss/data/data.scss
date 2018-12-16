@@ -147,7 +147,7 @@
   padding: 10px;
   border-radius: 5px;
   left: calc(50vw - 155px);
-  top:calc(50vh - 80px);
+  top: calc(50vh - 80px);
   cursor: pointer;
 }
 
@@ -155,7 +155,7 @@
 .graph {
 
   .britechart {
-    overflow:visible!important;
+    overflow: visible !important;
   }
 
   svg {
@@ -208,7 +208,7 @@
     height: 175px;
     position: relative;
     left: calc(50% - 400px);
-    top: 140px!important;
+    top: 140px !important;
   }
 
   &#day_year {
@@ -225,7 +225,7 @@
       width: 500px;
       height: auto;
       font-size: 27px;
-      top:-30px;
+      top: -30px;
       position: relative;
       display: block;
       text-align: center;
@@ -241,7 +241,7 @@
       width: 500px;
       height: auto;
       font-size: 27px;
-      top:-30px;
+      top: -30px;
       position: relative;
       display: block;
       text-align: center;
