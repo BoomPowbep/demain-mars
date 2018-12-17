@@ -24,8 +24,7 @@ Encore
     .enableVersioning(false)
      .configureFilenames({
         images: 'images/[name].[ext]'
-    })
-;
+    });
 
 let config = Encore.getWebpackConfig();
 config.watchOptions = { poll: true, ignored: /node_modules/ };
