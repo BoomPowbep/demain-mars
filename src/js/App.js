@@ -2,6 +2,8 @@
  * npm run encore.watch
  */
 
+import * as Konami from 'konami';
+
 import ScrollHandler from './ScrollHandler';
 import Stars from './Stars';
 import Animations from './Animations';
@@ -26,6 +28,7 @@ class App {
         if (!mobilecheck()) {
             document.querySelector('#fullpage').style.display = 'block';
             document.querySelector('#about_btn').style.display = 'block';
+            this._initKonami();
             this._registerTriggers();
             this.scrollHandler = new ScrollHandler();
             this.scrollHandler.init();
@@ -33,32 +36,20 @@ class App {
             Animations.playIntro();
         } else {
             document.querySelector('#mobile_view').style.display = 'block';
-            document.querySelector('#speaker').style.display = 'none';
             let rect = document.querySelector('#mobile_content_container').getBoundingClientRect();
             document.querySelector('#mobile_content_container').style.top = window.innerHeight / 2 - rect.height / 2 + "px";
         }
     }
 
+    _initKonami() {
+        new Konami(() => {
+            this.song.play();
+        });
+    }
+
     _registerTriggers() {
 
         console.log('🎛 Register triggers');
-
-        let speaker = document.querySelector('#speaker');
-        let speakerImage = document.querySelector('#speaker img');
-        speaker.addEventListener('mousedown', () => {
-            if(speaker.classList.contains('off')) {
-                speaker.classList.remove('off');
-                speaker.classList.add('on');
-                speakerImage.src = 'images/speaker_on.svg';
-                this.song.play();
-            }
-            else if(speaker.classList.contains('on')) {
-                speaker.classList.remove('on');
-                speaker.classList.add('off');
-                speakerImage.src = 'images/speaker_off.svg';
-                this.song.pause();
-            }
-        });
 
         /** Modal about **/
         document.querySelector('#about_btn').addEventListener('mousedown', () => {
