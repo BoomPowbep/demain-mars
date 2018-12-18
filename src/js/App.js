@@ -20,7 +20,8 @@ class App {
 
     constructor() {
         console.log('🚀 Demain, Mars ? 🌟 Workshop Dataviz 📊');
-        this.song = new Audio('sound/starwars.mp3');
+        this.song = null;
+        document.querySelector('#speaker').style.display = 'none';
     }
 
     init() {
@@ -43,13 +44,32 @@ class App {
 
     _initKonami() {
         new Konami(() => {
+            this.song = new Audio('sound/starwars.mp3');
             this.song.play();
+            document.querySelector('#speaker').style.display = 'block';
         });
     }
 
     _registerTriggers() {
 
         console.log('🎛 Register triggers');
+
+        let speaker = document.querySelector('#speaker');
+        let speakerImage = document.querySelector('#speaker img');
+        speaker.addEventListener('mousedown', () => {
+            if(speaker.classList.contains('off')) {
+                speaker.classList.remove('off');
+                speaker.classList.add('on');
+                speakerImage.src = 'images/speaker_on.svg';
+                this.song.play();
+            }
+            else if(speaker.classList.contains('on')) {
+                speaker.classList.remove('on');
+                speaker.classList.add('off');
+                speakerImage.src = 'images/speaker_off.svg';
+                this.song.pause();
+            }
+        });
 
         /** Modal about **/
         document.querySelector('#about_btn').addEventListener('mousedown', () => {
