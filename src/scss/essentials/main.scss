@@ -35,6 +35,8 @@ html {
       //cursor: url('./../images/fusee.svg') 2 2, auto;
 
       #speaker {
+        display: none;
+        cursor: pointer;
         position: absolute;
         top: 30px;
         left: 30px;

@@ -21,7 +21,6 @@ class App {
     constructor() {
         console.log('🚀 Demain, Mars ? 🌟 Workshop Dataviz 📊');
         this.song = null;
-        document.querySelector('#speaker').style.display = 'none';
     }
 
     init() {
