@@ -19,7 +19,13 @@ window.mobilecheck = function () {
 class App {
 
     constructor() {
-        console.log('🚀 Demain, Mars ? 🌟 Workshop Dataviz 📊');
+        console.log('');
+        console.log('%c🚀 Demain, Mars ? ⏩ %cWorkshop Dataviz 📊 BDDI 2018', 'color: #3b3652; font-weight: bold;', 'font-weight: normal;');
+        console.log('');
+        console.log('%c👉 Équipe :', 'font-weight: bold; color: blue;');
+        console.log('%c     Nitya Tchangodei : Graphisme', 'font-weight: bold; color: blue;');
+        console.log('%c     Mickaël Debalme : Développement', 'font-weight: bold; color: blue;');
+        console.log('');
         this.song = null;
     }
 
