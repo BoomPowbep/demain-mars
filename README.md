@@ -25,12 +25,12 @@ npm install
 
 #### Watch (dev only)
 ```
-npm run encore.watch
+npm run watch
 ```
 
 #### Build pour production 
 ```
-npm run encore.prod
+npm run prod
 ```
 
 ### Serveur HTTP
