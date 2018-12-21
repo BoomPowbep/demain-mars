@@ -166,6 +166,25 @@ html {
           }
         }
 
+        #dev_links {
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          z-index: 4;
+          width: 60px;
+          height: 60px;
+
+          a {
+            width: 100%;
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
         #sources {
           position: absolute;
           bottom: 0;
