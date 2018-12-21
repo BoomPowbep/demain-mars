@@ -1,7 +1,3 @@
-/**
- * npm run encore.watch
- */
-
 import * as Konami from 'konami';
 
 import ScrollHandler from './ScrollHandler';

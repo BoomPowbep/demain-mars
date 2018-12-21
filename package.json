@@ -6,8 +6,8 @@
     "serve": "http-server -p 8088",
     "encore.dev": "encore dev",
     "encore.dev-server": "encore dev-server --hot",
-    "encore.prod": "encore production",
-    "encore.watch": "encore dev --watch"
+    "prod": "encore production",
+    "watch": "encore dev --watch"
   },
   "author": "Hugo Duval",
   "devDependencies": {
